@@ -13,6 +13,7 @@ export default class Popup {
         closeButton.innerHTML = '&times;';
 
         const player = document.createElement('div');
+        player.className = 'player-container';
         player.id = 'player';
 
         popupContainer.appendChild(closeButton);
