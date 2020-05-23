@@ -52,15 +52,20 @@ body {
     background: #FFDF37;
 }
 
-.text-container__text{
-    flex: 0 1 auto;
-}
-
 .button-container {
     flex: 0 1 auto;
     width: 146px;
     height: 35px;
+}
 
+.button-container__button-play {
+    background: transparent;
+    border: none;
+    outline:none;
+}
+
+.text-container__text{
+    flex: 0 1 auto;
 }
 
 .text-container__text span {
@@ -75,12 +80,6 @@ body {
     z-index: 1; 
     display: none;
     margin: auto;
-    width: 97%;
-    height: 97%;
-}
-
-.video-container {
-    display: flex;
     flex-flow: column;
     width: 100%;
     height: 100%;

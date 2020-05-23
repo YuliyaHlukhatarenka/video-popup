@@ -1,3 +1,6 @@
+import Popup from './popup.js';
+const VIDEO_URL = 'https://www.youtube.com/embed/PAAUqBghiVo';
+
 document.addEventListener("DOMContentLoaded", function() {
   const lazyBackground = document.querySelector(".main-container__background-image");
 
@@ -15,40 +18,11 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-let openVideoButton = document.getElementById('button-img');
+let openVideoButton = document.getElementById('button-play');
+openVideoButton.focus();
 
 openVideoButton.onclick = function() {
-  const popup = new Popup;
+  const popup = new Popup(VIDEO_URL);
   popup.init();
-}
-
-class Popup {
-  init() {
-    const popupEl = document.getElementById('video-popup');
-    popupEl.style.display = "block";
-
-    document.addEventListener('keyup', this.checkKey);
-
-    const closeButton = document.getElementById('close');
-    closeButton.onclick = this.closePopup;
-  }
-  
-  checkKey(e) {
-    if (e.keyCode == '27') {
-      const popup = document.getElementById('video-popup');
-      popup.style.display = "none";
-    }
-  }
-  
-  closePopup() {
-    const popup = document.getElementById('video-popup');
-    popup.style.display = "none";
-  }
-   
-
-
-  destroy() {
-
-  }
-  
+  console.log(popup);
 }

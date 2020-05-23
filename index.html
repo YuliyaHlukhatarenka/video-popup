@@ -15,16 +15,13 @@
                 <p>Digestion is<span> the key </span>to overall wellnessin Body, Mind and Spirit</p>
             </div>
             <div class="button-container">
-                <img id="button-img" src="./assets/Fill 1.svg" alt="Watch now button">
-            </div>
-        </div>
-        <div id="video-popup" class="popup">
-            <div class="video-container">
-                <span id="close" class="popup__close-button">&times;</span>            
-                <iframe src="https://www.youtube.com/embed/EOxj2ROIxok" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <button type="button" id="button-play" class="button-container__button-play">
+                    <img src="./assets/Fill 1.svg" alt="Watch now button">
+                </button>
             </div>
         </div>
     </main>
-    <script src="src/index.js" ></script>
+    <script type="module" src="./src/index.js" ></script>  
+    <script src="https://www.youtube.com/iframe_api"></script> 
 </body>
 </html>
