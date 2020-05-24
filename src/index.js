@@ -1,5 +1,5 @@
 import Popup from './popup.js';
-const VIDEO_URL = 'https://www.youtube.com/embed/PAAUqBghiVo';
+const VIDEO_URL = 'PAAUqBghiVo';
 
 document.addEventListener("DOMContentLoaded", function() {
   const lazyBackground = document.querySelector(".main-container__background-image");
@@ -24,5 +24,4 @@ openVideoButton.focus();
 openVideoButton.onclick = function() {
   const popup = new Popup(VIDEO_URL);
   popup.init();
-  console.log(popup);
 }

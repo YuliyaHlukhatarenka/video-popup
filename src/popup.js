@@ -10,6 +10,7 @@ export default class Popup {
         const closeButton = document.createElement('span');
         closeButton.className = 'popup__close-button';
         closeButton.id = 'close';
+        closeButton.setAttribute('tabindex', "0");
         closeButton.innerHTML = '&times;';
 
         const player = document.createElement('div');
@@ -39,20 +40,33 @@ export default class Popup {
 
         const closeButton = document.getElementById('close');
         closeButton.onclick = this.closeVideo;
+        closeButton.onkeyup = this.checkKey;      
     }
 
     onYouTubeIframeAPIReady = () => {
         this.videoInstance = new YT.Player('player', {
-            videoId: 'PAAUqBghiVo',
+            videoId: this.videoId,
             playerVars: { 
                 'controls': 1, 
                 'disablekb': 0,
+            },
+            events: {
+                'onReady': this.onPlayerReady,
             }
         });
     }
-    
+
+    onPlayerReady = (evt) => {
+        this.videoInstance.playVideo();
+    }
+
     checkKey = (e) => {
         if (e.keyCode == '27') {
+            this.closeVideo();
+            return;
+        }
+
+        if (e.keyCode == '13' && e.target.id == 'close') {
             this.closeVideo();
         }
     }

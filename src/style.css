@@ -27,21 +27,16 @@ body {
     width: 100%;
 }
 
-.text-container {
+.content-container {
     position: absolute;
     max-width: 940px;
     height: 460px;
     align-self: flex-end;
-
-    font-family: TiemposFine-Bold;
-    font-size: 50px;
-    line-height: 60px;
-
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     text-align: center;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 
     color: #FFFFFF;
 }
@@ -65,14 +60,38 @@ body {
     outline:none;
 }
 
-.text-container__text{
+.button-play-video:hover,
+.button-play-video:focus {
+    cursor: pointer;
+}
+
+.button-play-video__image:hover,
+.button-play-video__image:focus{
+    opacity: 0.7;
+}
+
+.content-container__text {
     flex: 0 1 auto;
 }
 
-.text-container__text span {
+.text_font_tiemposFine {
+    display: inline-block;
+    font-family: TiemposFine-Bold;
+    font-size: 50px;
+    line-height: 60px;
+}
+
+.text_font_quentin {
     font-family: Quentin, 'Comic Sans MS', cursive;
-    font-size: 1.5em;
+    display: inline-block;
+    font-size: 1.4em;
     vertical-align: -2px;
+}
+
+.text_size_big {
+    display: inline-block;
+    transform: scale(1, 1.5);
+    text-indent: 0.2em;
 }
 
 .popup {
@@ -80,7 +99,7 @@ body {
     top: 0; 
     z-index: 1; 
     display: none;
-    margin: auto;
+    margin: 0 auto;
     flex-flow: column;
     width: 100%;
     height: 100%;
@@ -88,18 +107,23 @@ body {
 
 .player-container {
     flex: 0 1 auto;
-    width: 100%;
-    height: 100%;
+    align-self: center;
+    width: 95%;
+    height: 95%;
 }
 
 .popup__close-button {
     flex: 0 1 auto;
+    align-self: flex-end;
     color: #aaaaaa;
     width: 30px;
     height: 30px;
-    font-size: 30px;;
+    font-size: 30px;
 }
 
+.popup__close-button:active {
+    outline: none;
+}
 .popup__close-button:hover,
 .popup__close-button:focus {
     color: #000;
@@ -108,10 +132,6 @@ body {
 }
 
 @media only screen and (max-width: 1024px) {
-    body {
-      background-color: lightblue;
-    }
-
     .main-container {
         overflow: hidden;
     }
@@ -123,10 +143,6 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-    body {
-      background-color: rgb(230, 173, 185);
-    }
-
     .main-container {
         overflow: hidden;
     }
@@ -140,10 +156,12 @@ body {
         width: 50px;
     }
 
-    .text-container {
+    .content-container {
         font-size: 30px;
         line-height: 40px
     }
-
+    .content-container__text {
+        margin: 0 auto;
+    }
   }
 
